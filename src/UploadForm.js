@@ -25,7 +25,7 @@ function UploadForm() {
         formData.append('tags', tags);
 
         try {
-            const response = await axios.post('http://localhost:5000/upload', formData);
+            const response = await axios.post('lecturelensbackend-production.up.railway.app/upload', formData);
             alert(response.data.message);
             setUploadResult(response.data);
 
