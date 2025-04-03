@@ -1,13 +1,257 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html, body {
+    background-color: #121212 !important;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.intro-box {
+    background-color: #121212;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 80vh; 
+}
+
+.intro-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.current-info {
+    flex: 1;
+    margin: 3rem 2rem;
+    min-width: 300px;
+    text-align: left;
+    color: #fff;
+}
+
+.logo-box {
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 50px !important;
+    height: auto !important;
+}
+
+.intro-heading {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.intro-text {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    width: 95%;
+    text-align: justify;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-intro{
+    background-color: #FFF5E1 !important;
+    color: #1e1e1e !important;
+}
+
+.btn-intro:hover{
+    background-color: #333 !important;
+    color: #FFF5E1 !important;
+    transition: all 0.3s ease;
+}
+
+.steps {
+    flex: 1;
+    margin: 2rem 1rem;
+    color: #fff;
+}
+
+.steps-box {
+    padding: 2rem;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    justify-content: center;
+    align-items: center;
+    color: #FFF5E1;
+}
+
+.steps-heading {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.steps-list {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.intro-heading, .intro-text, .footer-text, .header-text, .active, .results-box, .summary, .s-heading {
+    color: #FFF5E1 !important;
+}
+
+.upload-box {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 80vh; 
+    padding: 5rem 0; 
+    background-color: #121212;
+}
+
+.upload{
+    padding: 10px 10px;
+    width: 90%;
+    border-radius: 10px;
+    margin: 3rem;
+}
+
+.u-heading{
+    color:#FFF5E1;
+}
+
+.btn-upload {
+    background-color: #FFF5E1 !important;
+}
+
+.btn-upload:hover{
+    background-color: #333 !important;
+    color:#FFF5E1 !important;
+    transition: all 0.3s ease;
+}
+
+.summary{
+    color: black;
+    width: 90%;
+    padding: 10px;
+}
+
+.search-box{
+    background-color: #121212;
+    min-height: 80vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.s-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.search{
+    width: 90%;
+}
+
+.date-range {
+    display: flex !important;
+    gap: 10px !important;
+    width: 100% !important;
+}
+
+.date-range input {
+    flex: 1 !important; /* Makes both date inputs take equal space */
+    min-width: 0 !important; /* Prevents overflow issues */
+}
+
+/* Responsive Fix */
+@media (max-width: 576px) {  /* For small screens */
+    .date-range {
+        flex-direction: column !important; /* Stack date inputs */
+        gap: 5px !important;
+    }
+}
+
+.btn-search {
+    background-color: #FFF5E1 !important;
+    color: black !important;
+}
+
+.btn-search:hover {
+    background-color: #333 !important;
+    color: #FFF5E1 !important;
+    transition: all 0.3s ease;
+}
+
+.results-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+    width: 90%;
+}
+
+.note-card {
+    padding: 1.5rem !important;
+    border-radius: 12px;
+    background: #FFF5E1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: #333;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+}
+
+.footer {
+    border: none !important;
+    outline: none !important;
+    min-height: 10vh;
+    background-color: #1e1e1e !important;
+}
+
+.navbar{
+    min-height: 10vh;
+    background-color: #1e1e1e !important;
+}
+
+.nav-link{
+    border-radius: 10px;
+}
+
+.navbar-toggler-icon {
+    filter: invert(100%); 
+}
+
+.nav-link:hover{
+    background-color: #FFF5E1;
+    color:#121212 !important;
+    transition: all 0.3s ease;
+}
+
+.footer .bi {
+    color: #FFF5E1; 
+    font-size: 24px;
+}
+
+.icons i:hover {
+    color: #FFFFFF !important; 
+}
+
+.animated-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.animated-collapse.show {
+    max-height: 300px; /* Adjust this value based on navbar content height */
 }
