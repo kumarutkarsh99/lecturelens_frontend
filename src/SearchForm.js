@@ -13,7 +13,7 @@ function SearchForm() {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.get('http://localhost:5000/search', {
+            const response = await axios.get('lecturelensbackend-production.up.railway.app/search', {
                 params: { q: query, tag, start_date: startDate, end_date: endDate },
             });
 
@@ -33,7 +33,7 @@ function SearchForm() {
         if (!window.confirm("Are you sure you want to delete this note?")) return;
 
         try {
-            await axios.delete(`http://localhost:5000/delete/${noteId}`);
+            await axios.delete(`lecturelensbackend-production.up.railway.app/${noteId}`);
             alert("Deleted successfully");
             setResults(results.filter(note => note.id !== noteId));
         } catch (error) {
