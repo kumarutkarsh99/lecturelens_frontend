@@ -256,15 +256,15 @@ html, body {
     max-height: 300px; /* Adjust this value based on navbar content height */
 }
 
-.date-range {
+/* .date-range {
     display: flex !important;
     gap: 10px !important;
 }
 
 .date-range input {
     flex: 1 !important; /* Make date inputs evenly spread */
-}
+} */
 
 .react-datepicker-wrapper{
-    width: 100% !important;
+    width: 50% !important;
 }
