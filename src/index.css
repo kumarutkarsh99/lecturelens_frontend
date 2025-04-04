@@ -262,7 +262,7 @@ html, body {
 }
 
 .date-range input {
-    flex: 1 !important; /* Make date inputs evenly spread */
+    flex: 1 !important; 
 } */
 
 .react-datepicker-wrapper{
