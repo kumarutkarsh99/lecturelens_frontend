@@ -64,7 +64,7 @@ function SearchForm() {
                             type="text"
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
-                            placeholder="Enter search term (leave blank to view all files)"
+                            placeholder="Enter search term"
                             className="form-control shadow-sm"
                         />
                         <input
