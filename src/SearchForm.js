@@ -30,18 +30,22 @@ function SearchForm() {
     };
 
     const handleDelete = async (noteId) => {
-        if (!window.confirm("Are you sure you want to delete this note?")) return;
+    if (!window.confirm("Are you sure you want to delete this note?")) return;
 
-        try {
-            await axios.delete(`https://lecturelensbackend-production.up.railway.app/${noteId}`);
+    try {
+        const response = await axios.delete(`https://lecturelensbackend-production.up.railway.app/delete/${noteId}`);
+        
+        if (response.status === 200) {
             alert("Deleted successfully");
             setResults(results.filter(note => note.id !== noteId));
-        } catch (error) {
-            console.error('Delete error:', error.response ? error.response.data : error);
-            alert('Error deleting note');
+        } else {
+            throw new Error("Failed to delete note");
         }
-    };
-
+    } catch (error) {
+        console.error('Delete error:', error.response ? error.response.data : error);
+        alert('Error deleting note');
+    }
+};
 
     return (
         <div className="search-box">
