@@ -73,12 +73,14 @@ function SearchForm() {
                                 value={startDate}
                                 onChange={(e) => setStartDate(e.target.value)}
                                 className="form-control shadow-sm flex-fill"
+                                placeholder="YYYY-MM-DD"
                             />
                             <input
                                 type="date"
                                 value={endDate}
                                 onChange={(e) => setEndDate(e.target.value)}
                                 className="form-control shadow-sm flex-fill"
+                                placeholder="YYYY-MM-DD"
                             />
                         </div>
                         <button type="submit" className="btn btn-search w-100 shadow" disabled={loading}>
