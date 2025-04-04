@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 function SearchForm() {
     const [query, setQuery] = useState('');
     const [tag, setTag] = useState('');
-    const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate] = useState('');
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -14,7 +16,12 @@ function SearchForm() {
         setLoading(true);
         try {
             const response = await axios.get('https://lecturelensbackend-production.up.railway.app/search', {
-                params: { q: query, tag, start_date: startDate, end_date: endDate },
+                params: { 
+                    q: query, 
+                    tag, 
+                    start_date: startDate ? startDate.toISOString().split('T')[0] : '',
+                    end_date: endDate ? endDate.toISOString().split('T')[0] : '' 
+                },
             });
 
             if (response.data.length === 0) {
@@ -30,22 +37,22 @@ function SearchForm() {
     };
 
     const handleDelete = async (noteId) => {
-    if (!window.confirm("Are you sure you want to delete this note?")) return;
+        if (!window.confirm("Are you sure you want to delete this note?")) return;
 
-    try {
-        const response = await axios.delete(`https://lecturelensbackend-production.up.railway.app/delete/${noteId}`);
-        
-        if (response.status === 200) {
-            alert("Deleted successfully");
-            setResults(results.filter(note => note.id !== noteId));
-        } else {
-            throw new Error("Failed to delete note");
+        try {
+            const response = await axios.delete(`https://lecturelensbackend-production.up.railway.app/delete/${noteId}`);
+            
+            if (response.status === 200) {
+                alert("Deleted successfully");
+                setResults(results.filter(note => note.id !== noteId));
+            } else {
+                throw new Error("Failed to delete note");
+            }
+        } catch (error) {
+            console.error('Delete error:', error.response ? error.response.data : error);
+            alert('Error deleting note');
         }
-    } catch (error) {
-        console.error('Delete error:', error.response ? error.response.data : error);
-        alert('Error deleting note');
-    }
-};
+    };
 
     return (
         <div className="search-box">
@@ -68,17 +75,19 @@ function SearchForm() {
                             className="form-control shadow-sm"
                         />
                         <div className="date-range d-flex gap-2 flex-wrap w-100">
-                            <input
-                                type="date"
-                                value={startDate ? new Date(startDate).toISOString().split('T')[0] : ""}
-                                onChange={(e) => setStartDate(e.target.value)}
+                            <DatePicker
+                                selected={startDate}
+                                onChange={(date) => setStartDate(date)}
                                 className="form-control shadow-sm flex-fill"
+                                placeholderText="Start Date"
+                                dateFormat="yyyy-MM-dd"
                             />
-                            <input
-                                type="date"
-                                value={endDate ? new Date(endDate).toISOString().split('T')[0] : ""}
-                                onChange={(e) => setEndDate(e.target.value)}
+                            <DatePicker
+                                selected={endDate}
+                                onChange={(date) => setEndDate(date)}
                                 className="form-control shadow-sm flex-fill"
+                                placeholderText="End Date"
+                                dateFormat="yyyy-MM-dd"
                             />
                         </div>
                         <button type="submit" className="btn btn-search w-100 shadow" disabled={loading}>
