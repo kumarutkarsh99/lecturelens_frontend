@@ -64,7 +64,7 @@ function SearchForm() {
                             type="text"
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
-                            placeholder="Enter search term"
+                            placeholder="Enter search term (leave blank to view all files)"
                             className="form-control shadow-sm"
                         />
                         <input
@@ -79,14 +79,14 @@ function SearchForm() {
                                 selected={startDate}
                                 onChange={(date) => setStartDate(date)}
                                 className="form-control shadow-sm flex-fill"
-                                placeholderText="Start Date"
+                                placeholderText="Start Date (optional)"
                                 dateFormat="yyyy-MM-dd"
                             />
                             <DatePicker
                                 selected={endDate}
                                 onChange={(date) => setEndDate(date)}
                                 className="form-control shadow-sm flex-fill"
-                                placeholderText="End Date"
+                                placeholderText="End Date (optional)"
                                 dateFormat="yyyy-MM-dd"
                             />
                         </div>
