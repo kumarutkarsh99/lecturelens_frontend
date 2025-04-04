@@ -70,17 +70,15 @@ function SearchForm() {
                         <div className="date-range d-flex gap-2 flex-wrap w-100">
                             <input
                                 type="date"
-                                value={startDate}
+                                value={startDate ? new Date(startDate).toISOString().split('T')[0] : ""}
                                 onChange={(e) => setStartDate(e.target.value)}
                                 className="form-control shadow-sm flex-fill"
-                                placeholder="YYYY-MM-DD"
                             />
                             <input
                                 type="date"
-                                value={endDate}
+                                value={endDate ? new Date(endDate).toISOString().split('T')[0] : ""}
                                 onChange={(e) => setEndDate(e.target.value)}
                                 className="form-control shadow-sm flex-fill"
-                                placeholder="YYYY-MM-DD"
                             />
                         </div>
                         <button type="submit" className="btn btn-search w-100 shadow" disabled={loading}>
