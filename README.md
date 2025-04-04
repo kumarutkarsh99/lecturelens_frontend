@@ -1,6 +1,6 @@
 # LectureLens
 
-LectureLens is a smart note management web application that enables users to upload and search lecture notes using Optical Character Recognition (OCR), Natural Language Processing (NLP), and intelligent search. It is designed for students and learners who require an organized and searchable platform for their handwritten or scanned study materials.
+LectureLens is a smart note management web application that enables users to upload and search lecture notes using Optical Character Recognition (OCR), Natural Language Processing (NLP) and intelligent search. It is designed for students and learners who require an organized and searchable platform for their handwritten or scanned study materials.
 
 ---
 
@@ -19,12 +19,11 @@ LectureLens is a smart note management web application that enables users to upl
 
 ### Frontend
 - React.js
-- Tailwind CSS
 - Axios
 
 ### Backend
 - Flask (Python)
-- PostgreSQL (via SQLAlchemy)
+- PostgreSQL
 - Tesseract OCR
 - Sumy and NLTK for text summarization and keyword extraction
 - pdf2image and Pillow for PDF to image conversion
@@ -32,7 +31,7 @@ LectureLens is a smart note management web application that enables users to upl
 
 ### Infrastructure and Deployment
 - Railway for backend and database hosting
-- Render or Vercel for frontend hosting
+- Vercel for frontend hosting
 
 ---
 
