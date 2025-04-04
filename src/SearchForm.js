@@ -74,7 +74,7 @@ function SearchForm() {
                             placeholder="Filter by tag (optional)"
                             className="form-control shadow-sm"
                         />
-                        <div className="date-range d-flex gap-2 flex-wrap w-100">
+                        <div className="date-range d-flex gap-2 w-100">
                             <DatePicker
                                 selected={startDate}
                                 onChange={(date) => setStartDate(date)}
