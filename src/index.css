@@ -256,21 +256,11 @@ html, body {
     max-height: 300px; /* Adjust this value based on navbar content height */
 }
 
-.search-box {
-    max-width: 600px; /* Adjust width */
-    margin: auto; /* Center the form */
-}
-
-.search input,
-.search button {
-    width: 100%; /* Make inputs and button full width */
-}
-
 .date-range {
-    display: flex;
-    gap: 10px;
+    display: flex !important;
+    gap: 10px !important;
 }
 
 .date-range input {
-    flex: 1; /* Make date inputs evenly spread */
+    flex: 1 !important; /* Make date inputs evenly spread */
 }
