@@ -21,7 +21,7 @@ LectureLens is a smart note management web application that enables users to upl
 - React.js
 - Axios
 
-### Backend
+### Backend (kumarutkarsh99/lecturelens_backend)
 - Flask (Python)
 - PostgreSQL
 - Tesseract OCR
