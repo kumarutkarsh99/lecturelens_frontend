@@ -166,14 +166,13 @@ html, body {
 }
 
 .date-range input {
-    flex: 1 !important; /* Makes both date inputs take equal space */
-    min-width: 0 !important; /* Prevents overflow issues */
+    flex: 1 !important; 
+    min-width: 0 !important; 
 }
 
-/* Responsive Fix */
-@media (max-width: 576px) {  /* For small screens */
+@media (max-width: 576px) {  
     .date-range {
-        flex-direction: column !important; /* Stack date inputs */
+        flex-direction: column !important; 
         gap: 5px !important;
     }
 }
@@ -253,7 +252,7 @@ html, body {
 }
 
 .animated-collapse.show {
-    max-height: 300px; /* Adjust this value based on navbar content height */
+    max-height: 300px; 
 }
 
 .date-range {
